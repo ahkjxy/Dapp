@@ -4,7 +4,7 @@
       <div class="bullshit">
         <div class="bullshit__oops">{{error.statusCode== 404 ? 404 : 'Oops~'}}<span>{{error.statusCode}}</span></div>
         <div class="bullshit__headline">{{ error.statusCode == 404 ? '没有这个页面~' : error.message }}</div>
-        <nuxt-link :to="error.statusCode == 404 ? '#' : '/account/login'"><el-button type="primary">{{error.statusCode == 404 ? '知道了' : '重新登录'}}</el-button></nuxt-link>
+        <nuxt-link to="#"><el-button type="primary">{{error.statusCode == 404 ? '知道了' : 'Reload'}}</el-button></nuxt-link>
       </div>
     </div>
   </div>

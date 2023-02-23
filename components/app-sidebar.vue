@@ -16,8 +16,9 @@
           <span>账号管理</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item index="/account/add">创建账号</el-menu-item>
+          <el-menu-item index="/account/add">批量创建账号</el-menu-item>
           <el-menu-item index="/account/query">账号信息查询</el-menu-item>
+          <el-menu-item index="/account/pay">批量账号交易</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
       <el-submenu index="/connect">
