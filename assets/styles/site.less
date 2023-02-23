@@ -1,0 +1,136 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  color: #6c757d;
+  background-color: #fafbfe;
+  font-family: 'PingFang SC', 'Microsoft Yahei';
+}
+.main-body {
+  padding: 25px 0;
+  display: block!important;
+}
+.full-width {
+  width: 100%;
+}
+.el-card {
+  margin-bottom: 25px;
+  &__header {
+    padding-top: 25px!important;
+    border: none!important;
+    span {
+      font-weight: bold;
+      padding-left: 15px;
+      border-left: 3px solid #067a53;
+    }
+  }
+  &__body {
+    .el-button-group {
+      margin-top: -3px;
+    }
+    .card-body{
+      margin-top: -15px;
+      &.no-header-card {
+        margin-top: 12px;
+        margin-bottom: -10px;
+      }
+    }
+  }
+}
+.el-submenu.is-active {
+  .el-submenu__title {
+    background-color: #222222;
+    color: rgb(6, 122, 83) !important;
+    i {
+      color: rgb(6, 122, 83) !important;
+    }
+  }
+}
+.el-button {
+  padding: 12px 20px!important;
+}
+.el-pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.el-dialog {
+  &__body {
+    padding: 15px 20px!important;
+  }
+}
+
+.el-descriptions {
+  margin-bottom: 25px;
+  &.no-marb {
+    margin-bottom: -1px;
+  }
+  &__header {
+    margin-bottom: 10px!important;
+  }
+}
+
+/* DASHBOARD */
+.card-item {
+  &__wrap {
+    padding: 10px 20px;
+    background: #f4f4f4;
+    border-radius: 5px;
+    p {
+      color: #999;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+    h3 {
+      font-size: 30px;
+      margin: 0;
+    }
+  }
+}
+
+/* widthdraw */
+.widthdraw {
+  &-box {
+    .el-card__body {
+      height: 150px;
+    }
+  }
+  &-title {
+    margin-bottom: 0;
+  }
+  &-amount {
+    font-size: 2em;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+  .widthdraw-btns {}
+  &-summary {
+    .el-col {
+      flex: auto;
+      height: 100px;
+      border-right: 1px solid #f0f0f0;
+      &:last-child {
+        border: none;
+      }
+    }
+    &__item {
+      p {
+        color: #999;
+        font-size: 12px;
+        margin: 0 0 5px;
+      }
+      h3 {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        margin: 0;
+        .el-button {
+          margin-left: auto;
+        }
+      }
+      h5 {
+        margin-top: 5px;
+      }
+    }
+  }
+}

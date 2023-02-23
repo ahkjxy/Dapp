@@ -1,0 +1,24 @@
+{
+  "apps": [
+    {
+      "name": "dealer-admin",
+      "script": "./node_modules/nuxt/bin/nuxt.js",
+      "instances": 2,
+      "max_memory_restart": "500M",
+      "error_file": "/data/log/alinode/domain.com.log",
+      "out_file": "/data/log/alinode/domain.com-out.log",
+      "merge_logs": true,
+      "log_date_format": "YYYY-MM-DD HH:mm Z",
+      "watch": false,
+      "args": [
+        "start",
+        "--host=0.0.0.0",
+        "-p=3033"
+      ],
+      "env": {
+        "DEV_MODE": "PROD",
+        "NODE_ENV": "production"
+      }
+    }
+  ]
+}
