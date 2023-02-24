@@ -11,10 +11,37 @@
           </div>
           <br>
           <el-button type="primary" @click="onQuery">立即查询</el-button>
-          <div>
-            <h5>查询结果:</h5>
-            <p>账户余额: {{balanceInEth}} ETH</p>
-          </div>
+          
+          <el-table
+            :data="list"
+            style="width: 100%">
+            <el-table-column
+              prop="blockHash"
+              label="blockHash"
+              min-width="200">
+            </el-table-column>
+            <el-table-column
+              prop="blockNumber"
+              label="blockNumber"
+              min-width="160">
+            </el-table-column>
+            <el-table-column
+              prop="gasPrice"
+              label="gasPrice"
+              min-width="100">
+            </el-table-column>
+            <el-table-column
+              prop="from"
+              label="from"
+              min-width="300">
+            </el-table-column>
+            <el-table-column
+              prop="to"
+              label="to"
+              min-width="300"
+              fixed="right">
+            </el-table-column>
+          </el-table>
         </div>
       </el-card>
     </el-container>
@@ -28,18 +55,17 @@ export default {
   async asyncData(context) {},
   data() {
     return {
-      balanceInEth: '',
       address: '0x92AD632485c7d3F6921c1b9Db419273c1D75e9cC',
+      list: []
     }
   },
   methods: {
     async onQuery() {
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      console.log('provider', provider)
-      provider.getBalance(this.address).then((balance) => {
-        const balanceInEth = ethers.utils.formatEther(balance)
-        this.balanceInEth = balanceInEth;
-      })
+      /** METHOD 1 */
+      const { address } = this;
+      const provider = new ethers.providers.EtherscanProvider('homestead', 'B1P528Y66Z7NAKMH1FACDSCNX27RW2D341'); // main -> homestead
+      const result = await provider.getHistory(address);
+      this.list = result;
     },
   }
 }
